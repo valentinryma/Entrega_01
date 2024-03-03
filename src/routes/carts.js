@@ -49,6 +49,11 @@ router.post('/:cid/product/:pid', async (req, res) => {
     // Agrega el producto recien creado a un carrito seleccionado por el id como primer parametro, retorna el carrito completo
     const cart = await manager.addProductCart(cid, productToAdd);
 
+    if (cart.error) {
+        res.status(400)
+            .json(cart);
+
+    }
     res.status(200)
         .json(cart.products); // Muestra unicamente los productos que contiene el carrito.
 })

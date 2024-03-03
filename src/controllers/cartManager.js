@@ -84,13 +84,20 @@ class CartManager {
                 return { error: "Cart not found" };
             }
 
-            // Banderea: 
-            let flag = 1;
-            //      1: El producto no existe
-            //      0: El producto ya existe
 
-            // Obitene el id del producto por agregar.
+            // Verifica que el producto exista en la json db.
             const idProductAdd = product.productId;
+
+            const productfileContent = await fs.promises.readFile(`${__dirname}/../../db/productos.json`);
+            const productsAll = JSON.parse(productfileContent);
+            const productFound = productsAll.find(p => p.id === idProductAdd);
+
+            if (!productFound) {
+                return { error: "Error: The product you are trying to add does not exist." };
+            }
+
+            // Banderea: 1: El producto no existe || 0: El producto ya existe
+            let flag = 1;
 
             // Recorre los productos del carrito al que se le agregará el nuevo producto, corroborando si ya existe en el carrito
             cartsAll[index].products.forEach(p => {
