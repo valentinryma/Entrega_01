@@ -6,3 +6,7 @@
 **Comandos:**
 * `npm start`: Inicia el serivdor
 * `npm run reset`: Resetea los archivos iniciales (productos.json & carritos.json)
+
+* Comisión: 53115
+* Profesor: Lucas Pereyra
+* Tutor:  Luciano Staniszewski
