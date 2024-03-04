@@ -1,9 +1,8 @@
-***********
-
-# Entrega del proyecto final: #1
-**Objetivo:** Desarrollar un servidor para la gestión de productos y carritos de compra para un *e-commerce*
-**Test Postman:** [LINK](https://bold-shuttle-355224.postman.co/workspace/New-Team-Workspace~8c97ea5a-157a-4297-95ad-898e284a0d41/collection/31523825-c84f981d-f00f-4f4c-a98d-c0db7de70595?action=share&creator=31523825)
-	- Carpeta compartida con los test en postman.
+********
+# Entrega del proyecto final JavaScript 💻
+****
+**📗 Descripción:**
+Este proyecto en JavaScript es una herramienta básica para la administración de una concesionaria. Utiliza archivos JSON para simular una base de datos relacional, con funcionalidades clave como el ABM de productos, un sistema de usuarios y sesiones para administradores con privilegios especiales, el uso de LocalStorage para almacenamiento local y un sistema de filtrado y búsqueda de productos (vehículos) por propiedades específicas.
 
 **Comandos:**
 * `npm start`: Inicia el serivdor
