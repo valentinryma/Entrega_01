@@ -70,8 +70,8 @@ router.put('/:pid', async (req, res) => {
     // Actualiza un objeto existente (No cambia ID)
 
     const id = +req.params.pid;
-    const { title, code, price, status, stock, category, thumbnails } = req.body
-    const productNew = { title, code, price, status, stock, category, thumbnails };
+    const newFields = req.body
+    const productNew = newFields;
 
     const productUpdate = await manager.updateProductById(id, productNew);
     const statusCode = (productUpdate.error) ? 400 : 200;

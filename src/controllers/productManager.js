@@ -87,7 +87,7 @@ class ProductManager {
 
     async updateProductById(id, productNew) {
         // Actualiza los datos de un prudcto existente (seleccionado por el id)
-
+        console.log('Product New Data', productNew);
         try {
             const productsAll = await this.getProducts();
             const index = productsAll.findIndex(p => p.id === id)
@@ -96,15 +96,15 @@ class ProductManager {
                 return { error: "Product not found" };
             }
 
-            const validation = validateFields(productNew);
-            if (validation != 1) {
-                return validation;
+            const productOld = productsAll[index];
+            const productUpdate = {
+                ...productOld,
+                ...productNew
             }
 
-            // Obtiene el objeto correspondiente al id (el cual permanece) y re asigna los datos (productNew => req.body).
             productsAll[index] = {
                 id,
-                ...productNew,
+                ...productUpdate
             };
 
             // Guarda en el archivo donde se alamacenan los productos, el mismo array de objeto
